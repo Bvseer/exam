@@ -13,10 +13,10 @@
         <input type="file" name="newSound" id="">
         <input type="text" name="name" id="" style="border: 5px solid">
         <select name="category_id" id="">
-            <option value="1">Аплодисменты</option>
-            <option value="2">Бары, кафе и рестораны</option>
-            <option value="3">Транспорт, машины, авто</option>
-            <option value="4">Природа</option>
+            <option value="1">Рэп</option>
+            <option value="2">Попса</option>
+            <option value="3">Классика</option>
+            <option value="4">Джаз</option>
         </select>
         <button type="submit">Submit</button>
     </form>

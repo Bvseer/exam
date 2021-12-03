@@ -18,6 +18,9 @@
         body {
             font-family: 'Nunito', sans-serif;
         }
+        input {
+            border: 3px solid;
+        }
     </style>
 </head>
 <body class="antialiased">

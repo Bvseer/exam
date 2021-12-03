@@ -2,7 +2,7 @@
 @section('content')
 
     <audio controls>
-        <source src="{{ $sound[0]->path }}">
+        <source src="{{ $sound->path }}">
     </audio>
-
+    <a href="{{ $sound->path }}">DOWNLOAD</a>
 @endsection
