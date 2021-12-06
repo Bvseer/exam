@@ -4,9 +4,79 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "1b8adc0ada37a8d80a1ed357f5b93689",
     "packages": [
         {
+=======
+    "content-hash": "21d8aed3f0eb37946d19734e4f83fac5",
+    "packages": [
+        {
+            "name": "anhskohbo/no-captcha",
+            "version": "3.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/anhskohbo/no-captcha.git",
+                "reference": "f654a4093bd2e9ddbdfad3297bb7aa142a55e611"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/anhskohbo/no-captcha/zipball/f654a4093bd2e9ddbdfad3297bb7aa142a55e611",
+                "reference": "f654a4093bd2e9ddbdfad3297bb7aa142a55e611",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.2|^7.0",
+                "illuminate/support": "^5.0|^6.0|^7.0|^8.0",
+                "php": ">=5.5.5"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Anhskohbo\\NoCaptcha\\NoCaptchaServiceProvider"
+                    ],
+                    "aliases": {
+                        "NoCaptcha": "Anhskohbo\\NoCaptcha\\Facades\\NoCaptcha"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Anhskohbo\\NoCaptcha\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "anhskohbo",
+                    "email": "anhskohbo@gmail.com"
+                }
+            ],
+            "description": "No CAPTCHA reCAPTCHA For Laravel.",
+            "keywords": [
+                "captcha",
+                "laravel",
+                "laravel4",
+                "laravel5",
+                "laravel6",
+                "no-captcha",
+                "recaptcha"
+            ],
+            "support": {
+                "issues": "https://github.com/anhskohbo/no-captcha/issues",
+                "source": "https://github.com/anhskohbo/no-captcha/tree/3.3.0"
+            },
+            "time": "2020-09-10T02:31:52+00:00"
+        },
+        {
+>>>>>>> ddb9627 (updated)
             "name": "asm89/stack-cors",
             "version": "v2.0.3",
             "source": {
@@ -1385,6 +1455,7 @@
         },
         {
             "name": "league/commonmark",
+<<<<<<< HEAD
             "version": "2.0.2",
             "source": {
                 "type": "git",
@@ -1395,6 +1466,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/2df87709f44b0dd733df86aef0830dce9b1f0f13",
                 "reference": "2df87709f44b0dd733df86aef0830dce9b1f0f13",
+=======
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/commonmark.git",
+                "reference": "819276bc54e83c160617d3ac0a436c239e479928"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/819276bc54e83c160617d3ac0a436c239e479928",
+                "reference": "819276bc54e83c160617d3ac0a436c239e479928",
+>>>>>>> ddb9627 (updated)
                 "shasum": ""
             },
             "require": {
@@ -1413,11 +1496,19 @@
                 "ext-json": "*",
                 "github/gfm": "0.29.0",
                 "michelf/php-markdown": "^1.4",
+<<<<<<< HEAD
                 "phpstan/phpstan": "^0.12.88",
                 "phpunit/phpunit": "^9.5.5",
                 "scrutinizer/ocular": "^1.8.1",
                 "symfony/finder": "^5.3",
                 "symfony/yaml": "^2.3 | ^3.0 | ^4.0 | ^5.0",
+=======
+                "phpstan/phpstan": "^0.12.88 || ^1.0.0",
+                "phpunit/phpunit": "^9.5.5",
+                "scrutinizer/ocular": "^1.8.1",
+                "symfony/finder": "^5.3",
+                "symfony/yaml": "^2.3 | ^3.0 | ^4.0 | ^5.0 | ^6.0",
+>>>>>>> ddb9627 (updated)
                 "unleashedtech/php-coding-standard": "^3.1",
                 "vimeo/psalm": "^4.7.3"
             },
@@ -1427,7 +1518,11 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
+<<<<<<< HEAD
                     "dev-main": "2.1-dev"
+=======
+                    "dev-main": "2.2-dev"
+>>>>>>> ddb9627 (updated)
                 }
             },
             "autoload": {
@@ -1468,10 +1563,13 @@
             },
             "funding": [
                 {
+<<<<<<< HEAD
                     "url": "https://enjoy.gitstore.app/repositories/thephpleague/commonmark",
                     "type": "custom"
                 },
                 {
+=======
+>>>>>>> ddb9627 (updated)
                     "url": "https://www.colinodell.com/sponsor",
                     "type": "custom"
                 },
@@ -1484,15 +1582,22 @@
                     "type": "github"
                 },
                 {
+<<<<<<< HEAD
                     "url": "https://www.patreon.com/colinodell",
                     "type": "patreon"
                 },
                 {
+=======
+>>>>>>> ddb9627 (updated)
                     "url": "https://tidelift.com/funding/github/packagist/league/commonmark",
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
             "time": "2021-08-14T14:06:04+00:00"
+=======
+            "time": "2021-12-05T18:25:20+00:00"
+>>>>>>> ddb9627 (updated)
         },
         {
             "name": "league/config",
@@ -2191,6 +2296,7 @@
         },
         {
             "name": "phpoption/phpoption",
+<<<<<<< HEAD
             "version": "1.8.0",
             "source": {
                 "type": "git",
@@ -2201,6 +2307,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/5455cb38aed4523f99977c4a12ef19da4bfe2a28",
                 "reference": "5455cb38aed4523f99977c4a12ef19da4bfe2a28",
+=======
+            "version": "1.8.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/schmittjoh/php-option.git",
+                "reference": "eab7a0df01fe2344d172bff4cd6dbd3f8b84ad15"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/eab7a0df01fe2344d172bff4cd6dbd3f8b84ad15",
+                "reference": "eab7a0df01fe2344d172bff4cd6dbd3f8b84ad15",
+>>>>>>> ddb9627 (updated)
                 "shasum": ""
             },
             "require": {
@@ -2208,7 +2326,11 @@
             },
             "require-dev": {
                 "bamarni/composer-bin-plugin": "^1.4.1",
+<<<<<<< HEAD
                 "phpunit/phpunit": "^6.5.14 || ^7.0.20 || ^8.5.19 || ^9.5.8"
+=======
+                "phpunit/phpunit": "^6.5.14 || ^7.5.20 || ^8.5.19 || ^9.5.8"
+>>>>>>> ddb9627 (updated)
             },
             "type": "library",
             "extra": {
@@ -2228,11 +2350,21 @@
             "authors": [
                 {
                     "name": "Johannes M. Schmitt",
+<<<<<<< HEAD
                     "email": "schmittjoh@gmail.com"
                 },
                 {
                     "name": "Graham Campbell",
                     "email": "hello@gjcampbell.co.uk"
+=======
+                    "email": "schmittjoh@gmail.com",
+                    "homepage": "https://github.com/schmittjoh"
+                },
+                {
+                    "name": "Graham Campbell",
+                    "email": "hello@gjcampbell.co.uk",
+                    "homepage": "https://github.com/GrahamCampbell"
+>>>>>>> ddb9627 (updated)
                 }
             ],
             "description": "Option Type for PHP",
@@ -2244,7 +2376,11 @@
             ],
             "support": {
                 "issues": "https://github.com/schmittjoh/php-option/issues",
+<<<<<<< HEAD
                 "source": "https://github.com/schmittjoh/php-option/tree/1.8.0"
+=======
+                "source": "https://github.com/schmittjoh/php-option/tree/1.8.1"
+>>>>>>> ddb9627 (updated)
             },
             "funding": [
                 {
@@ -2256,7 +2392,11 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
             "time": "2021-08-28T21:27:29+00:00"
+=======
+            "time": "2021-12-04T23:24:31+00:00"
+>>>>>>> ddb9627 (updated)
         },
         {
             "name": "psr/container",
@@ -5712,6 +5852,7 @@
         },
         {
             "name": "fakerphp/faker",
+<<<<<<< HEAD
             "version": "v1.16.0",
             "source": {
                 "type": "git",
@@ -5722,12 +5863,28 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/FakerPHP/Faker/zipball/271d384d216e5e5c468a6b28feedf95d49f83b35",
                 "reference": "271d384d216e5e5c468a6b28feedf95d49f83b35",
+=======
+            "version": "v1.17.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FakerPHP/Faker.git",
+                "reference": "b85e9d44eae8c52cca7aa0939483611f7232b669"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FakerPHP/Faker/zipball/b85e9d44eae8c52cca7aa0939483611f7232b669",
+                "reference": "b85e9d44eae8c52cca7aa0939483611f7232b669",
+>>>>>>> ddb9627 (updated)
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1 || ^8.0",
                 "psr/container": "^1.0 || ^2.0",
+<<<<<<< HEAD
                 "symfony/deprecation-contracts": "^2.2"
+=======
+                "symfony/deprecation-contracts": "^2.2 || ^3.0"
+>>>>>>> ddb9627 (updated)
             },
             "conflict": {
                 "fzaninotto/faker": "*"
@@ -5746,7 +5903,11 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
+<<<<<<< HEAD
                     "dev-main": "v1.16-dev"
+=======
+                    "dev-main": "v1.17-dev"
+>>>>>>> ddb9627 (updated)
                 }
             },
             "autoload": {
@@ -5771,9 +5932,15 @@
             ],
             "support": {
                 "issues": "https://github.com/FakerPHP/Faker/issues",
+<<<<<<< HEAD
                 "source": "https://github.com/FakerPHP/Faker/tree/v1.16.0"
             },
             "time": "2021-09-06T14:53:37+00:00"
+=======
+                "source": "https://github.com/FakerPHP/Faker/tree/v1.17.0"
+            },
+            "time": "2021-12-05T17:14:47+00:00"
+>>>>>>> ddb9627 (updated)
         },
         {
             "name": "filp/whoops",
@@ -6514,6 +6681,7 @@
         },
         {
             "name": "phpunit/php-code-coverage",
+<<<<<<< HEAD
             "version": "9.2.9",
             "source": {
                 "type": "git",
@@ -6524,6 +6692,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/f301eb1453c9e7a1bc912ee8b0ea9db22c60223b",
                 "reference": "f301eb1453c9e7a1bc912ee8b0ea9db22c60223b",
+=======
+            "version": "9.2.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
+                "reference": "d5850aaf931743067f4bfc1ae4cbd06468400687"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/d5850aaf931743067f4bfc1ae4cbd06468400687",
+                "reference": "d5850aaf931743067f4bfc1ae4cbd06468400687",
+>>>>>>> ddb9627 (updated)
                 "shasum": ""
             },
             "require": {
@@ -6579,7 +6759,11 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
+<<<<<<< HEAD
                 "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.9"
+=======
+                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.10"
+>>>>>>> ddb9627 (updated)
             },
             "funding": [
                 {
@@ -6587,7 +6771,11 @@
                     "type": "github"
                 }
             ],
+<<<<<<< HEAD
             "time": "2021-11-19T15:21:02+00:00"
+=======
+            "time": "2021-12-05T09:12:13+00:00"
+>>>>>>> ddb9627 (updated)
         },
         {
             "name": "phpunit/php-file-iterator",
