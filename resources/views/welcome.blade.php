@@ -1,5 +1,8 @@
 @extends('layouts.header')
 @section('content')
+    @foreach($categories as $c)
+        <a href="/show/{{ $c->id }}" >{{ $c->name }}</a><br>
+    @endforeach
     <form action="show" method="get">
         @csrf
         <p>Поиск звука</p>
@@ -13,10 +16,11 @@
         <input type="file" name="newSound" id="">
         <input type="text" name="name" id="" style="border: 5px solid">
         <select name="category_id" id="">
-            <option value="1">Рэп</option>
-            <option value="2">Попса</option>
-            <option value="3">Классика</option>
-            <option value="4">Джаз</option>
+            @foreach($categories as $c)
+            <a>
+                <option value="{{ $c->id }}">{{ $c->name }}</option>
+            </a>
+            @endforeach
         </select>
         <button type="submit">Submit</button>
     </form>

@@ -10,14 +10,21 @@ use Illuminate\Support\Facades\Hash;
 
 class SoundController extends Controller
 {
-    public function soundSearch(Request $request) {
+    public function soundSearch(Request $request, $id = 0) {
         // $sound = Sound::where('name', 'like', $request->sound . "%");
 
         // if($request->category) {
         // $sound = Sound::where('name', 'like', "$request->category%");
         // }
-        $sound = Sound::find(2);
-        return view('search', compact('sound'));
+        dd($id);
+        $category = Category::where('id', $request->id)->get();
+        dd($category);
+        return view('search', compact('$category'));
+    }
+
+    public function allCategories() {
+        $categories = Category::all();
+        return view('welcome', compact('categories'));
     }
 
     public function addSound(Request $request) {

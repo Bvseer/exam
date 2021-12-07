@@ -18,28 +18,25 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('auth/register');
 });
-Route::get('/welcome', function () {
-    return view('welcome');
-<<<<<<< HEAD
-});
-Route::post('/', [AuthController::class, 'auth']);
-=======
-})->name('home');
+
+Route::get('/welcome', [App\Http\Controllers\SoundController::class, 'allCategories'])->middleware('user');
+
+Route::post('/', [AuthController::class, 'auth'])->name('home');
 
 //Route::post('/', [AuthController::class, 'auth']);
->>>>>>> ddb9627 (updated)
 
 
 Route::post('/add', [\App\Http\Controllers\SoundController::class, 'addSound']);
-Route::get('/show', [\App\Http\Controllers\SoundController::class, 'soundSearch']);
+Route::get('/show/{id}', [\App\Http\Controllers\SoundController::class, 'soundSearch']);
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-<<<<<<< HEAD
-=======
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
->>>>>>> ddb9627 (updated)
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
