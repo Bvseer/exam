@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UpdateSoundsTable extends Migration
+class AddIsAdminFieldToUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class UpdateSoundsTable extends Migration
      */
     public function up()
     {
-        Schema::table('sounds', function (Blueprint $table) {
-            $table->string('path');
+        Schema::table('users', function (Blueprint $table) {
+            $table->boolean('is_admin')->default(false);
         });
     }
 
@@ -26,7 +26,7 @@ class UpdateSoundsTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('path');
+            $table->dropColumn('is_admin');
         });
     }
 }

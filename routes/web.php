@@ -20,7 +20,7 @@ Route::get('/', function () {
 });
 Route::get('/welcome', function () {
     return view('welcome');
-})->name('home');
+})->name('welcome')->middleware('admin');
 
 //Route::post('/', [AuthController::class, 'auth']);
 
@@ -31,6 +31,10 @@ Route::get('/show', [\App\Http\Controllers\SoundController::class, 'soundSearch'
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//Route::get('/admin', [App\Http\Controllers\AdminController::class, 'admin'])->name('admin')->middleware('admin');
 
 Auth::routes();
 
