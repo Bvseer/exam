@@ -16,6 +16,7 @@ class UpdateSoundsTable extends Migration
         Schema::table('sounds', function (Blueprint $table) {
             $table->string('path');
         });
+
     }
 
     /**

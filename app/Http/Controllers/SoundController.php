@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Complaint;
 use App\Models\Sound;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -10,47 +11,54 @@ use Illuminate\Support\Facades\Hash;
 
 class SoundController extends Controller
 {
-    public function soundSearch(Request $request, $id = 0) {
-        // $sound = Sound::where('name', 'like', $request->sound . "%");
+    public function searchByCategory(Request $request, $id = 0) {
+        $sound = Sound::where('category_id', $request->id)
+            ->where('is_available', 1)
+            ->get();
+        if($sound->isEmpty()) {
+            $request->session()->flash('status', 'В этой категории файлы не найдены!');
+            return redirect('main');
+        }
+        return view('search', compact('sound'));
+    }
 
-        // if($request->category) {
-        // $sound = Sound::where('name', 'like', "$request->category%");
-        // }
-        dd($id);
-        $category = Category::where('id', $request->id)->get();
-        dd($category);
-        return view('search', compact('$category'));
+    public function searchByName(Request $request) {
+        $sound = Sound::where('name', 'like', $request->sound . '%')
+            ->where('is_available', 1)
+            ->get();
+        if($sound->isEmpty()) {
+            $request->session()->flash('status', 'Файл не найден!');
+            return redirect('main');
+        }
+        return view('search', compact('sound'));
     }
 
     public function allCategories() {
         $categories = Category::all();
-        return view('welcome', compact('categories'));
+        return view('main', compact('categories'));
     }
 
     public function addSound(Request $request) {
-//        dump(Hash::make("storage/$request->file('newSound')"));
-//        dd($request->file('newSound')->store(''));
-
-//        $request->validate([
-//            'name' => 'required|mimes:wav,aif,mp3|max:2048',
-//            'path' => 'required8',
-//            'category_id' => 'required|integer'
-//        ]);
         if($request->hasFile('newSound')) {
-////        dd($request->file('newSound'));
-//        $soundPath = $request->file('newSound')->store('storage');
-//        $sound = new Sound();
-//        $sound->name = 'test';
-//        $sound->path = $soundPath;
-//        $sound->category_id = $request->category_id;
-//        $sound->save();
         DB::table('sounds')->insert([
             'name' => $request->name,
             'path' => $request->file('newSound')->store('storage'),
             'category_id' => $request->category_id
         ]);
-        dump("Added");
-        return redirect('/welcome');
+        $request->session()->flash('status', 'Успешно отправлено на проверку!');
+        return redirect('/main');
+        } else {
+            $request->session()->flash('status', 'Добавьте файл пожалуйста!');
+            return redirect('main');
         }
+    }
+
+    public function complaint(Request $request) {
+        $complaint = new Complaint();
+        $complaint->reason = $request->reason;
+        $complaint->complaint = $request->complaint;
+        $complaint->save();
+        $request->session()->flash('status', 'Жалоба отправлена!');
+        return redirect()->back();
     }
 }

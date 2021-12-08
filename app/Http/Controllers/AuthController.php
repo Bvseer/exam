@@ -18,7 +18,7 @@ class AuthController extends Controller
             return redirect('/')
                         ->withErrors($validator)
                         ->withInput();
-        }else {
+        }   else {
             return redirect('/welcome');
         }
     }

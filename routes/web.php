@@ -17,9 +17,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('auth/register');
-});
+})->middleware('is_logged');
 
-Route::get('/welcome', [App\Http\Controllers\SoundController::class, 'allCategories'])->middleware('user');
+Route::match(['get', 'post'],'/main', [App\Http\Controllers\SoundController::class, 'allCategories'])
+    ->middleware('user')->name('main');
 
 Route::post('/', [AuthController::class, 'auth'])->name('home');
 
@@ -27,15 +28,9 @@ Route::post('/', [AuthController::class, 'auth'])->name('home');
 
 
 Route::post('/add', [\App\Http\Controllers\SoundController::class, 'addSound']);
-Route::get('/show/{id}', [\App\Http\Controllers\SoundController::class, 'soundSearch']);
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/search/{id}', [\App\Http\Controllers\SoundController::class, 'searchByCategory']);
+Route::get('/search', [\App\Http\Controllers\SoundController::class, 'searchByName']);
+Route::post('/search/complaint', [\App\Http\Controllers\SoundController::class, 'complaint']);
 
 Auth::routes();
 

@@ -16,10 +16,73 @@
 
     <style>
         body {
+            padding: 25px;
             font-family: 'Nunito', sans-serif;
+            color: white;
+            background: url("public/background2.jpg");
         }
         input {
             border: 3px solid;
+            margin-block: 5px;
+            border-radius: 10px;
+        }
+        .parentDivForSounds {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .category {
+            border: 2px solid;
+            border-radius: 15px;
+            padding: 10px;
+        }
+        .searchForm {
+            border: 2px solid;
+            border-radius: 15px;
+            padding: 15px;
+            margin-block: 30px;
+        }
+        .formsDiv {
+            display: flex;
+        }
+        .formsDiv form {
+            margin-inline: 15px;
+            width: 50%;
+        }
+        .soundInput {
+            border: 1px solid white;
+            padding: 3px;
+            border-radius: 5px;
+        }
+        .button {
+            background: white;
+            color: black;
+            margin: 15px 15px 15px 0;
+            padding: 5px;
+            border-radius: 15px;
+            width: 100px;
+        }
+        .complaintForm {
+            margin: 5px;
+            padding: 5px;
+            display: flex;
+        }
+        .formContent {
+            margin-inline: auto;
+            width: 100%;
+            padding: 25px;
+            border: 2px solid white;
+            border-radius: 15px;
+        }
+        .textarea {
+            border: 2px solid white;
+            border-radius: 10px;
+        }
+        .soundDiv {
+            border: 2px solid white;
+            border-radius: 15px;
+            padding: 15px;
+            width: 32%;
+            margin: 5px;
         }
     </style>
 </head>
