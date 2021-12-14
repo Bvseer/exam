@@ -17,7 +17,14 @@ class IsLogged
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::check()) return redirect('main');
-        else return $next($request);
+        if(Auth::check()) {
+            dump("AUTH TRUE");
+            return $next($request);
+        }
+        else {
+            dump("AUTH FALSE");
+            return redirect('login');
+        }
+
     }
 }

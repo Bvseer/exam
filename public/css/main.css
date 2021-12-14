@@ -1,0 +1,146 @@
+body {
+    padding: 25px;
+    font-family: 'Nunito', sans-serif;
+    color: white;
+    font-size: large;
+    background: url('../background.jpg');
+    background-position: center;
+    background-size: contain;
+}
+.covering_div {
+    border-radius: 15px;
+    color: black;
+    font-weight: 800;
+    background-color: rgba(48, 213, 200, 0.7);
+    padding: 15px;
+}
+.sound_checking {
+    display: flex;
+}
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+.sound_checking h2 {
+    width: 100%;
+    height: 20px;
+}
+.sound_checking div {
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 250px;
+    margin-inline: 15px;
+    text-align: center;
+    width: 50%;
+}
+.width_100 {
+    width: 100% !important;
+    margin-block: 15px;
+}
+.width_120 {
+    width: 120px !important;
+    margin: 0 !important;
+}
+.sound_name {
+    width: 100%;
+}
+.error {
+    text-align: center;
+    color: red;
+}
+.center {
+    text-align: center;
+}
+.black {
+    background: black !important;
+}
+.fblack {
+    color: black;
+}
+.link {
+    border: 2px solid white;
+    border-radius: 15px;
+    padding: 10px;
+    background: rgba(48, 213, 200, 0.7);
+}
+.btn {
+    padding: 5px;
+    border-radius: 15px;
+}
+.margin-block {
+    margin-block: 10px !important;
+}
+.block {
+    width: fit-content;
+    margin-bottom: 15px;
+    text-align: center;
+}
+.margin-10 {
+    margin: 15px;
+}
+.width-20 {
+    width: 22%;
+}
+input {
+    border: 3px solid;
+    margin-block: 5px;
+    border-radius: 10px;
+}
+.parentDivForSounds {
+    display: flex;
+    flex-wrap: wrap;
+}
+.category {
+    border: 2px solid;
+    border-radius: 15px;
+    padding: 10px;
+}
+.searchForm {
+    border: 2px solid;
+    border-radius: 15px;
+    padding: 15px;
+    margin-block: 30px;
+}
+.formsDiv {
+    display: flex;
+}
+.formsDiv form {
+    margin-inline: 15px;
+    width: 50%;
+}
+.soundInput {
+    border: 1px solid white;
+    padding: 3px;
+    border-radius: 5px;
+}
+.button {
+    background: white;
+    color: black;
+    margin: 15px 15px 15px 0;
+    padding: 5px;
+    border-radius: 15px;
+    width: 100px;
+}
+.complaintForm {
+    margin: 5px;
+    padding: 5px;
+    display: flex;
+}
+.formContent {
+    margin-inline: auto;
+    width: 100%;
+    padding: 25px;
+    border: 2px solid white;
+    border-radius: 15px;
+}
+.textarea {
+    border: 2px solid white;
+    border-radius: 10px;
+}
+.soundDiv {
+    border: 2px solid white;
+    border-radius: 15px;
+    padding: 15px;
+    width: 32%;
+    margin: 5px;
+}

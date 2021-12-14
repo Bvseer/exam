@@ -19,7 +19,7 @@ class AuthController extends Controller
                         ->withErrors($validator)
                         ->withInput();
         }   else {
-            return redirect('/welcome');
+            return redirect('/main');
         }
     }
 }

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     use HasFactory;
+    protected $fillable = ['name'];
     public function sound()
     {
         return $this->hasMany(Sound::class);

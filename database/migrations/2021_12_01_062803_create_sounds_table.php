@@ -15,8 +15,10 @@ class CreateSoundsTable extends Migration
     {
         Schema::create('sounds', function (Blueprint $table) {
             $table->id();
+            $table->string('path');
             $table->string('name');
-            $table->foreignId('category_id')->constrained();
+            $table->foreignId('category_id')->constrained()->cascadeOnDelete();
+            $table->tinyInteger('is_available')->default(0);
             $table->timestamps();
         });
     }

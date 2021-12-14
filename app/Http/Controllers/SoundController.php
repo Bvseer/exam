@@ -6,8 +6,10 @@ use App\Models\Category;
 use App\Models\Complaint;
 use App\Models\Sound;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class SoundController extends Controller
 {
@@ -16,8 +18,8 @@ class SoundController extends Controller
             ->where('is_available', 1)
             ->get();
         if($sound->isEmpty()) {
-            $request->session()->flash('status', 'В этой категории файлы не найдены!');
-            return redirect('main');
+            $request->session()->flash('response', 'В этой категории файлы не найдены!');
+            return redirect()->back();
         }
         return view('search', compact('sound'));
     }
@@ -27,8 +29,8 @@ class SoundController extends Controller
             ->where('is_available', 1)
             ->get();
         if($sound->isEmpty()) {
-            $request->session()->flash('status', 'Файл не найден!');
-            return redirect('main');
+            $request->session()->flash('response', 'Файл не найден!');
+            return redirect()->back();
         }
         return view('search', compact('sound'));
     }
@@ -39,17 +41,23 @@ class SoundController extends Controller
     }
 
     public function addSound(Request $request) {
+        $validator = Validator::make($request->all(), [
+            'newSound' => 'required|mimes:mp3,WAV|max:10000',
+        ]);
+        if($validator->fails()){
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
         if($request->hasFile('newSound')) {
         DB::table('sounds')->insert([
             'name' => $request->name,
             'path' => $request->file('newSound')->store('storage'),
             'category_id' => $request->category_id
         ]);
-        $request->session()->flash('status', 'Успешно отправлено на проверку!');
+        $request->session()->flash('response', 'Успешно отправлено на проверку!');
         return redirect('/main');
         } else {
-            $request->session()->flash('status', 'Добавьте файл пожалуйста!');
-            return redirect('main');
+            $request->session()->flash('response', 'Добавьте файл пожалуйста!');
+            return redirect()->back();
         }
     }
 
@@ -58,7 +66,7 @@ class SoundController extends Controller
         $complaint->reason = $request->reason;
         $complaint->complaint = $request->complaint;
         $complaint->save();
-        $request->session()->flash('status', 'Жалоба отправлена!');
+        $request->session()->flash('response', 'Жалоба отправлена!');
         return redirect()->back();
     }
 }
